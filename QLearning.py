@@ -1,6 +1,6 @@
-# The cod2e for training and testing the Qlearning algorthm
+# The code is  for training and testing the Qlearning algorthm
 # Nasrin Attaran - Feb 21#
-# Trading session 3 &4
+# Trading session all sessions 
 import pandas as pd
 import numpy as np
 import matplotlib
@@ -9,7 +9,7 @@ matplotlib.style.use('ggplot')
 import sklearn
 import seaborn as sns
 #import tensorflow
-import graphviz
+#import graphviz
 import pydot
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
@@ -42,37 +42,6 @@ data = pd.read_csv("testing_2.csv")
 testing_data2 = data[['NP10_Class', 'NC4_Class', 'FC10_Class', 'FP1_Class', 'BidAskRatio_Class', 'TotalMarketDepth_Class', 'Price_Class','Price_dif' ]]
 
 
-#training_data1.loc[:,"position0"] = ""   # create one empty column for filling with the position varuable (flat'0', buy'1' and sell'2')
-#training_data1.loc[:,"position1"] = ""
-#training_data1.loc[:,"position2"] = ""
-#partial_reward1 = data[['Price_dif']]  # partial_reward1 has the price differencs
-
-
-# training set 2 - Wednesday Jan 17
-# data = pd.read_csv("training_data_We.csv")
-# training_data2 = data[['LogReturn',  'Ticks_10S', 'BidAskRatio', 'Price_dif' ]]
-#training_data2.loc[:,"position0"] = ""   # create one empty column for filling with the position varuable (flat'0', buy'1' and sell'2')
-#training_data2.loc[:,"position1"] = ""
-#training_data2.loc[:,"position2"] = ""
-#partial_reward2 = data[['Price_dif']]  # put the reward for each actions in this column
-
-# training set 3 -Thursday Jan 18
-# data = pd.read_csv("training_data_Th.csv")
-# training_data3 = data[['LogReturn', 'Ticks_10S', 'BidAskRatio', 'Price_dif'  ]]
-# testing_data.loc[:,"position0"] = ""   # create one empty column for filling with the position varuable (flat'0', buy'1' and sell'2')
-# testing_data.loc[:,"position1"] = ""
-# testing_data.loc[:,"position2"] = ""
-#testing_reward = test_data[['Price_dif']]  # put the reward for each actions in this column
-# I changed the
-#cost = 3.03 #the cost of opening or closing a transaction is $3
-
-#testing the agent - Friday Jan 19
-# data = pd.read_csv("training_data_Fr.csv")
-# testing_data1 = data[['LogReturn', 'Ticks_10S', 'BidAskRatio', 'Price_dif'  ]]
-
-# define a class for trading environemnt -
-# This class just have one function to calculate the partial reward for each action which agent takes
-# For opening and closing long and short position, the agent should pay $3
 class environment:
     def __init__(self):
         self.cost = 3.03    # setting the cost amount
